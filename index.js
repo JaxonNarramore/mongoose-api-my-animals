@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/stella', (req, res) => {
+app.post('/stella', (req, res) => {
     MyPets.create({
         name: 'Stella',
         age: 1,
