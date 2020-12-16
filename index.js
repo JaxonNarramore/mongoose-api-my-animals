@@ -40,7 +40,7 @@ app.get('/stella', (req, res) => {
     })
 })
 
-app.get("/stellahobbies", (req, res) => {
+app.put("/stellahobbies", (req, res) => {
     MyPets.updateMany({name: 'Stella'}, {$set: {hobbies: [{fav: 'Being outside', leastFav: 'Being held'}]}})
     .then((hobbies)=> {
         res.status(200).json({ hobbies })
@@ -53,7 +53,7 @@ app.get('/findstella', (req, res) => {
     })
 })
 
-app.get('/deletepet', (req, res) => {
+app.delete('/deletepet', (req, res) => {
     MyPets.deleteMany().then(() => {
         console.log('Deleted!');
     })
